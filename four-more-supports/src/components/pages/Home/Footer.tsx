@@ -57,7 +57,9 @@ function Footer() {
                         {footerMenu3.map((menuItem) => {
                             return (
                                 <>
-                                    <div className="text-sm">{menuItem.subHeading}</div>
+                                    <div className="text-sm">
+                                        {menuItem.subHeading}
+                                    </div>
                                     <div className="text-white/50 text-sm my-3">
                                         {menuItem.content
                                             .split("\n")
@@ -73,7 +75,25 @@ function Footer() {
                         })}
                     </div>
                 </div>
-                <div className="w-1/4">end</div>
+                <div className="w-1/4 flex flex-col items-center gap-2">
+                    <div className="font-semibold text-2xl text-primary">
+                        Join Our Mailing List
+                    </div>
+                    <form className="flex flex-col justify-around w-[80%]">
+                        <input type="text" className="my-1.5 p-2 rounded-sm bg-white/10 text-white" placeholder="Full Name" />
+                        <input type="text" className="my-1.5 p-2 rounded-sm bg-white/10 text-white" placeholder="Phone Number" />
+                        <input type="text" className="my-1.5 p-2 rounded-sm bg-white/10 text-white" placeholder="Email Address" />
+                        <div className="flex justify-start">
+                            <button
+                                type="submit"
+                                className="bg-primary p-2 rounded-md text-secondary my-1 font-semibold"
+                            >
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                    
+                </div>
             </div>
             <div></div>
         </div>
