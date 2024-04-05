@@ -88,7 +88,7 @@ const NavDropdown: React.FC<NavDropdownProps> = ({ text, dropdowns }) => {
                     className="shrink-0 my-auto aspect-[1.37] fill-teal-950 w-[11px]"
                 />
             </div>
-            <div className="invisible absolute bg-tertiary w-[100%] group-hover:visible border border-secondary border-b-0 rounded-sm">
+            <div className="invisible absolute bg-tertiary w-[100%] group-hover:visible border border-secondary border-b-0 rounded-sm z-10">
                 {dropdowns?.map((item) => {
                     return <div className="border-b py-1 px-2.5 border-secondary cursor-pointer hover:bg-secondary hover:text-white">{item.text}</div>;
                 })}

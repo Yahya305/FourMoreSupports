@@ -95,7 +95,7 @@ function Footer() {
                     
                 </div>
             </div>
-            <div className="flex mt-10 mx-10">
+            <div className="flex my-8 mx-10">
                 <div className="w-1/2 text-sm text-white/50">ABN 15 101 252 171</div>
                 <div className="w-1/2 text-sm border border-1 p-3 rounded-sm text-white/50 border-white/50">Lorem ipsum dolor sit amet consectetur. Felis vulputate facilisis ut nulla ut mauris metus elementum</div>
             </div>
