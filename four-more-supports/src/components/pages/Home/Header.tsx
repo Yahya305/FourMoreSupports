@@ -79,7 +79,7 @@ const navDropdowns: NavDropdownProps[] = [
 const NavDropdown: React.FC<NavDropdownProps> = ({ text, dropdowns }) => {
     return (
         <div className="group relative cursor-pointer">
-            <div className="flex gap-2.5 justify-center self-stretch p-2.5">
+            <div className="flex gap-2.5 justify-center self-stretch p-1">
                 <div>{text}</div>
                 <img
                     loading="lazy"
@@ -90,7 +90,7 @@ const NavDropdown: React.FC<NavDropdownProps> = ({ text, dropdowns }) => {
             </div>
             <div className="invisible absolute bg-tertiary w-[100%] group-hover:visible border border-secondary border-b-0 rounded-sm">
                 {dropdowns?.map((item) => {
-                    return <div className="border-b py-1 px-2.5 border-secondary cursor-pointer">{item.text}</div>;
+                    return <div className="border-b py-1 px-2.5 border-secondary cursor-pointer hover:bg-secondary hover:text-white">{item.text}</div>;
                 })}
             </div>
         </div>
