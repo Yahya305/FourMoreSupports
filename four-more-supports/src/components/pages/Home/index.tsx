@@ -7,7 +7,7 @@ function index() {
   return (
     <div>
       <Header  />
-      <Cards />
+      {/* <Cards /> */}
       <Footer />
     </div>
   )

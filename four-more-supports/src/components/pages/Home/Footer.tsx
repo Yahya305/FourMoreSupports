@@ -9,8 +9,8 @@ import footerMenu3 from "../../../../lib/data/FooterMenu3";
 
 function Footer() {
     return (
-        <div className="bg-secondary text-white">
-            <div className="flex justify-between mx-10 py-10">
+        <div className="relative bg-secondary text-white py-10">
+            <div className="flex justify-between mx-10">
                 <div className="w-1/4">
                     <div className="relative h-16 w-24">
                         <Image
@@ -95,7 +95,13 @@ function Footer() {
                     
                 </div>
             </div>
-            <div></div>
+            <div className="flex mt-10 mx-10">
+                <div className="w-1/2 text-sm text-white/50">ABN 15 101 252 171</div>
+                <div className="w-1/2 text-sm border border-1 p-3 rounded-sm text-white/50 border-white/50">Lorem ipsum dolor sit amet consectetur. Felis vulputate facilisis ut nulla ut mauris metus elementum</div>
+            </div>
+            <div className="absolute w-[100%] p-3 bg-primary bottom-0 text-center text-secondary text-xs">
+                Copyright 2024. FMS PTY LTD. | Disclaimer | Privacy policy | Terms & Conditions
+            </div>
         </div>
     );
 }
