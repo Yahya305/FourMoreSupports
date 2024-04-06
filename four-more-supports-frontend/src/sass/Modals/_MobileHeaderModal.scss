@@ -1,0 +1,22 @@
+.MobileHeaderModal {
+    background: white;
+    height: 80vh;
+    width: 50vw;
+    z-index: 1011;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    position: relative;
+    overflow: hidden;
+    max-width: 900px;
+    @include responsive(xl) {
+        width: 60vw;
+    }
+    @include responsive(lg) {
+        width: 80vw;
+    }
+    @include responsive(md) {
+        width: 95vw;
+    }
+}

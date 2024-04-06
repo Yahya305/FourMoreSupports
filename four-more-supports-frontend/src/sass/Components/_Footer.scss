@@ -13,7 +13,8 @@
                 grid-template-columns: 1fr 1fr;
             }
             @include responsive(sm) {
-                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
             }
             .left {
                 svg {
@@ -36,6 +37,9 @@
                 .icons {
                     display: flex;
                     gap: 12px;
+                    svg {
+                        width: auto;
+                    }
                 }
             }
             .right {
@@ -83,7 +87,8 @@
                     grid-template-columns: 1fr 1fr;
                 }
                 @include responsive(xs) {
-                    grid-template-columns: 1fr;
+                    display: flex;
+                    flex-direction: column;
                 }
             }
             gap: 40px;

@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "../sass/style.scss";
 import StoreProvider from "@/Redux/StoreProvider";
-
-const inter = Inter({ subsets: ["latin"] });
+import ModalsInit from "@/Modals/ModalsInit";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -18,7 +16,10 @@ export default function RootLayout({
     return (
         <StoreProvider>
             <html lang="en">
-                <body className={inter.className}>{children}</body>
+                <body>
+                    <div className="__MAIN_SITE__">{children}</div>
+                    <ModalsInit />
+                </body>
             </html>
         </StoreProvider>
     );

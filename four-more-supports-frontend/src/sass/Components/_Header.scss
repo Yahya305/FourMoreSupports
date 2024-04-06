@@ -7,6 +7,10 @@ header {
         display: flex;
         gap: 100px;
         align-items: center;
+        @include responsive(md) {
+            justify-content: space-between;
+            gap: 0;
+        }
         .logo {
             svg {
                 width: 127px;
@@ -27,6 +31,12 @@ header {
                         @include typo($font_inter, 400, 18px, $secondary);
                     }
                 }
+            }
+        }
+        button.ham {
+            display: none;
+            @include responsive(md) {
+                display: block;
             }
         }
     }
