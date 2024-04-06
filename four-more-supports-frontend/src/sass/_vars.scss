@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// Breakpoints Structure
+$custom-breakpoints: (
+    xs: (
+        minSize: 0px,
+        maxSize: 575px,
+        maxContWidth: 0px,
+        name: "XS",
+    ),
+    sm: (
+        minSize: 576px,
+        maxSize: 767px,
+        maxContWidth: 719px,
+        name: "SM",
+    ),
+    md: (
+        minSize: 768px,
+        maxSize: 991px,
+        maxContWidth: 720px,
+        name: "MD",
+    ),
+    lg: (
+        minSize: 992px,
+        maxSize: 1249px,
+        maxContWidth: 960px,
+        name: "LG",
+    ),
+    xl: (
+        minSize: 1250px,
+        maxSize: 1499px,
+        maxContWidth: 1250px,
+        name: "XL",
+    ),
+    max: (
+        minSize: 1500px,
+        maxSize: 0px,
+        maxContWidth: 1201px,
+        name: "MAX",
+    ),
+);
+
+$primary: "#EABC05";
+$secondary: "#002035";
+$tertiary: "#f4f4f5";
