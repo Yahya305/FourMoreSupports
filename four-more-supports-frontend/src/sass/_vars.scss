@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 * {
     margin: 0;
     padding: 0;
@@ -44,6 +45,8 @@ $custom-breakpoints: (
     ),
 );
 
-$primary: "#EABC05";
-$secondary: "#002035";
-$tertiary: "#f4f4f5";
+$primary: #eabc05;
+$secondary: #002035;
+$tertiary: #f4f4f5;
+$font_inter: "Inter", sans-serif;
+$width: 1640px;

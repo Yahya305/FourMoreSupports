@@ -1,0 +1,36 @@
+@mixin responsive($breakpoint) {
+    @if map-has-key($custom-breakpoints, $breakpoint) {
+        @media (max-width: #{map-get(map-get($custom-breakpoints, $breakpoint), maxSize)}) {
+            @content;
+        }
+    } @else {
+        @warn "Breakpoint `#{$breakpoint}` does not exist. Check case sensitivity.";
+    }
+}
+
+@mixin typo($font-family, $weight, $size, $color) {
+    $important-declaration: " !important";
+
+    font-family: $font-family;
+    font-weight: $weight;
+    font-size: $size;
+    color: $color;
+}
+
+@mixin responsive-text-18() {
+    @include responsive(md) {
+        font-size: 16px;
+    }
+    @include responsive(sm) {
+        font-size: 14px;
+    }
+}
+
+@mixin responsive-text-28() {
+    @include responsive(md) {
+        font-size: 24px;
+    }
+    @include responsive(sm) {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,10 @@
+.__Primary_BUTTON__ {
+    all: unset;
+    cursor: pointer;
+    padding: 20px 30px;
+    @include typo($font_inter, 600, 18px, $secondary);
+    background-color: $primary;
+    border-radius: 5px;
+    width: fit-content;
+    user-select: none;
+}
