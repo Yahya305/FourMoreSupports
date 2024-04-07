@@ -6,13 +6,11 @@ type initialStateType = {
 };
 
 const initialState: initialStateType = {
-    mobileHeader: false,
-    navHeader: false
-
+    
 };
 
 export const Slice = createSlice({
-    name: "todo",
+    name: "GlobalVars",
     initialState,
     reducers: {
         

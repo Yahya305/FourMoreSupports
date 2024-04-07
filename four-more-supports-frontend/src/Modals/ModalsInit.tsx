@@ -6,7 +6,7 @@ import MobileHeaderModal from "./MobileHeaderModal";
 import { useEffect } from "react";
 
 const ModalsInit = () => {
-    const { MobileHeaderModalStatus,NavHeaderModalStatus } = useAppSelector(
+    const { MobileHeaderModalStatus } = useAppSelector(
         (state) => state.ModalVars
     );
 
@@ -21,16 +21,16 @@ const ModalsInit = () => {
             }
             return false;
         };
-    
+
         const handleOverflow = () => {
             const htmlElement = document.querySelector("html");
             if (htmlElement) {
                 htmlElement.style.overflow = isAnyModalOpen() ? "hidden" : "";
             }
         };
-    
+
         handleOverflow(); // Initial check
-    
+
         return () => {
             const htmlElement = document.querySelector("html");
             if (htmlElement) {
@@ -43,9 +43,6 @@ const ModalsInit = () => {
         <div className="__Modals_Init__">
             <AnimatePresence>
                 {MobileHeaderModalStatus && <MobileHeaderModal />}
-            </AnimatePresence>
-            <AnimatePresence>
-                {NavHeaderModalStatus && <MobileHeaderModal />}
             </AnimatePresence>
         </div>
     );

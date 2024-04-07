@@ -2,8 +2,7 @@ header {
     background: #f1f1f1;
     .nav-sec-1 {
         background-color: $primary;
-        height: 42px;
-        padding: 5px 50px;
+        padding: 10px 20px;
         display: flex;
         align-items: center;
         @include typo($font_inter, 400, medium, black);
@@ -16,20 +15,52 @@ header {
                 cursor: pointer;
                 font-weight: 600;
             }
-        }
-        .drop-icn {
-            display: none;
-        }
-        @include responsive(md) {
-            padding: 5px 20px;
-            .nav-menus {
+            @include responsive(md) {
                 display: none;
             }
+        }
+        .head,
+        .body {
+            display: none;
+        }
+        .head {
             .drop-icn {
-                display: block;
-                margin-left: auto;
-                cursor: pointer;
+                svg {
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                    &.active {
+                        transform: rotate(180deg);
+                    }
+                }
             }
+            @include responsive(md) {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+        }
+        .body {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 5px;
+            .mob-nav-menus {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            .nav-item {
+                text-align: center;
+                cursor: pointer;
+                @include typo($font_inter, 400, medium, black);
+            }
+        }
+        @include responsive(md) {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 50px;
         }
     }
     .nav-sec-2 {
@@ -104,3 +135,4 @@ header {
         }
     }
 }
+
