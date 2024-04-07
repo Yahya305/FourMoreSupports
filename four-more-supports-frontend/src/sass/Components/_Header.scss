@@ -63,6 +63,33 @@ header {
             gap: 50px;
         }
     }
+    .nav-sec-2 {
+        background-color: $secondary;
+        display: flex;
+        align-items: center;
+        padding: 5px 50px;
+        height: 70px;
+        .support-sec {
+            margin-left: auto;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            @include typo($font_inter, 400, medium, white);
+            @include responsive(sm) {
+                gap: 15px;
+            }
+
+            .phone-btn {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+            button{
+                font-size: 14px;
+            }
+        }
+    }
     .nav-sec-3 {
         max-width: $width;
         padding: 24px 20px;

@@ -7,6 +7,7 @@ import { ModalVarsActions } from "@/Redux/slices/ModalVars";
 import HeaderMenuItem from "@/SpecificComponenets/HeaderMenuItem";
 import { RxHamburgerMenu } from "react-icons/rx";
 import NavSection1 from "./NavSection1";
+import NavSection2 from "./NavSection2";
 
 const Header = () => {
     const dispatch = useAppDispatch();
@@ -17,6 +18,7 @@ const Header = () => {
         <header>
             <div className="header-wrapper">
                 <NavSection1 />
+                <NavSection2 />
                 {/* <div className="nav-sec-2">sdsa</div> */}
                 <div className="nav-sec-3">
                     <div className="logo">
