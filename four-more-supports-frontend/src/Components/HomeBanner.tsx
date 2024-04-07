@@ -3,7 +3,7 @@ import SecondaryButton from "./SecondaryButton";
 
 function HomeBanner() {
     return (
-        <div className="banner-container">
+        <section className="banner-container">
             <div className="banner-content">
                 <h1>Four More Supports</h1>
                 <p className="desc">
@@ -13,7 +13,7 @@ function HomeBanner() {
                 </p>
                 <SecondaryButton>Get in touch</SecondaryButton>
             </div>
-        </div>
+        </section>
     );
 }
 

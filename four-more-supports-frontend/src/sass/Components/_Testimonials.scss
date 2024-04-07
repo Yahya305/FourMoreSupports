@@ -1,0 +1,30 @@
+.Testimonials {
+    padding: 150px 0;
+    &-wrapper {
+        max-width: $width;
+        margin: 0 auto;
+        padding: 0 20px;
+        .head {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding-bottom: 90px;
+            h2 {
+                @include typo($font_inter, 500, 55px, #263238);
+            }
+            h3 {
+                @include typo($font_inter, 500, 35px, #263238);
+            }
+        }
+        .testimonial-slider {
+            .testimonial-slide {
+                &-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 40px;
+                }
+            }
+        }
+    }
+}
