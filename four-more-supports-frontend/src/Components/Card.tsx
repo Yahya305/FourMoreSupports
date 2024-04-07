@@ -21,7 +21,7 @@ function Card({
     return (
         <div className={`card ${variant === "primary" ? "white" : "blue"}`}>
             <Image src={imgSrc} alt="Card Logo" height={100} width={100} />
-            <h3>{headingContent}</h3>
+            <h2>{headingContent}</h2>
             <p>{descContent}</p>
             {variant === "primary" ? (
                 <SecondaryButton>{buttonContent}</SecondaryButton>
