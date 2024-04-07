@@ -1,9 +1,10 @@
-.__Primary_BUTTON__ {
+.__Secondary_BUTTON__ {
     all: unset;
     cursor: pointer;
     padding: 10px 15px;
-    @include typo($font_inter, 600, 18px, $secondary);
-    background-color: $primary;
+    margin: 5px 0px;
+    @include typo($font_inter, 600, 18px, white);
+    background-color: $secondary;
     border-radius: 5px;
     width: fit-content;
     user-select: none;
