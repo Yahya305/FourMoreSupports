@@ -3,13 +3,14 @@
 import Logo from "@/Assets/Icons/Logo";
 import { HeaderMenu } from "@/Lib/Data/HeaderMenu";
 import { useAppDispatch, useAppSelector } from "@/Redux/Hooks";
-import { GlobalVarsActions } from "@/Redux/slices/GlobalVars";
+import { ModalVarsActions } from "@/Redux/slices/ModalVars";
 import HeaderMenuItem from "@/SpecificComponenets/HeaderMenuItem";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Header = () => {
     const dispatch = useAppDispatch();
     const mobileHeader = useAppSelector(
-        (state) => state.GlobalVars.mobileHeader
+        (state) => state.ModalVars.MobileHeaderModalStatus
     );
     return (
         <header>
@@ -27,12 +28,14 @@ const Header = () => {
                 <button
                     onClick={() =>
                         dispatch(
-                            GlobalVarsActions.setMobileHeader(!mobileHeader)
+                            ModalVarsActions.setMobileHeaderModalStatus(
+                                !mobileHeader
+                            )
                         )
                     }
                     className="ham"
                 >
-                    open
+                    <RxHamburgerMenu />
                 </button>
             </div>
         </header>

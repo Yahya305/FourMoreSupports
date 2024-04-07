@@ -2,7 +2,7 @@ header {
     padding: 24px 20px;
     background: #f1f1f1;
     .header-wrapper {
-        max-height: $width;
+        max-width: $width;
         margin: 0 auto;
         display: flex;
         gap: 100px;
@@ -34,9 +34,13 @@ header {
             }
         }
         button.ham {
+            all: unset;
+            cursor: pointer;
+            font-size: 30px;
+
             display: none;
             @include responsive(md) {
-                display: block;
+                display: flex;
             }
         }
     }

@@ -1,29 +1,46 @@
 "use client";
 
-import BackDrop from "@/Components/Backdrop";
-import { ModalShowAnimation } from "@/Lib/Animation";
+import Logo from "@/Assets/Icons/Logo";
+import { AnimationType } from "@/Lib/Animation";
 import { useAppDispatch } from "@/Redux/Hooks";
-import { GlobalVarsActions } from "@/Redux/slices/GlobalVars";
+import { ModalVarsActions } from "@/Redux/slices/ModalVars";
 import { motion } from "framer-motion";
+import { MdClose } from "react-icons/md";
 
 const MobileHeaderModal = () => {
     const dispatch = useAppDispatch();
     return (
-        <BackDrop>
-            <motion.div {...ModalShowAnimation} className="MobileHeaderModal">
-                <div className="head">
-                    <div className="title"></div>
-                    <button
-                        onClick={() =>
-                            dispatch(GlobalVarsActions.setMobileHeader(false))
-                        }
-                    >
-                        close
-                    </button>
+        <motion.div {...MobileModalShowAnimation} className="MobileHeaderModal">
+            <div className="head">
+                <div className="logo">
+                    <Logo type="DARK" />
                 </div>
-            </motion.div>
-        </BackDrop>
+                <button
+                    onClick={() =>
+                        dispatch(
+                            ModalVarsActions.setMobileHeaderModalStatus(false)
+                        )
+                    }
+                >
+                    <MdClose />
+                </button>
+            </div>
+        </motion.div>
     );
+};
+
+const MobileModalShowAnimation: AnimationType = {
+    variants: {
+        hidden: { left: "100%", opacity: 0 },
+        show: { left: 0, opacity: 1 },
+    },
+    initial: "hidden",
+    animate: "show",
+    exit: "hidden",
+    transition: {
+        type: "tween",
+        duration: 0.5,
+    },
 };
 
 export default MobileHeaderModal;

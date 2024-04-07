@@ -1,4 +1,4 @@
-import { PayloadAction, createSlice, nanoid } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 type initialStateType = {
     mobileHeader: boolean;
@@ -12,9 +12,7 @@ export const Slice = createSlice({
     name: "todo",
     initialState,
     reducers: {
-        setMobileHeader: (state, action: PayloadAction<boolean>) => {
-            state.mobileHeader = action.payload;
-        },
+        
     },
 });
 

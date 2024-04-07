@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import GlobalVars from "@/Redux/slices/GlobalVars";
+import ModalVars from "./slices/ModalVars";
 // import todo from '@/Redux/slices/todoSlice'
 export const store = configureStore({
     reducer: {
         GlobalVars: GlobalVars,
+        ModalVars: ModalVars
     },
 });
 

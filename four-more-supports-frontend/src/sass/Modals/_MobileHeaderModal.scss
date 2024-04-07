@@ -1,22 +1,29 @@
 .MobileHeaderModal {
     background: white;
-    height: 80vh;
-    width: 50vw;
+    height: 100%;
+    width: 100%;
     z-index: 1011;
-    border-radius: 20px;
+    padding: 24px 20px;
+    position: absolute;
+    top: 0;
     display: flex;
     flex-direction: column;
-    padding: 30px 40px;
-    position: relative;
-    overflow: hidden;
-    max-width: 900px;
-    @include responsive(xl) {
-        width: 60vw;
-    }
-    @include responsive(lg) {
-        width: 80vw;
-    }
-    @include responsive(md) {
-        width: 95vw;
+    gap: 20px;
+    .head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .logo {
+            svg {
+                width: 127px;
+                height: 68px;
+            }
+        }
+        button {
+            all: unset;
+            cursor: pointer;
+            display: flex;
+            font-size: 30px;
+        }
     }
 }
