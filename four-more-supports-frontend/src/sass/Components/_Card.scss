@@ -1,0 +1,69 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 55px 50px;
+    gap: 15px;
+    border-radius: 10px;
+    h2,
+    p {
+        flex: 1; /* Make elements grow to fill available space */
+    }
+    h2 {
+        text-align: center;
+    }
+    p {
+        text-align: center;
+        font-size: medium;
+    }
+    &.blue {
+        background-color: $secondary;
+        color: white;
+    }
+    &.white {
+        background-color: white;
+        color: black;
+    }
+    @include responsive(lg) {
+        h2 {
+            font-size: x-large;
+        }
+    }
+    @include responsive(md) {
+        padding: 45px 25px;
+        h2 {
+            font-size: large;
+        }
+        p {
+            font-size: small;
+        }
+        button {
+            font-size: small;
+        }
+    }
+    @include responsive(sm) {
+        height: 550px;
+        margin-inline: 25px;
+        h2 {
+            font-size: xx-large;
+        }
+        p {
+            font-size: 22px;
+            width: 65%;
+        }
+        button {
+            font-size: inherit;
+        }
+    }
+    @include responsive(xs) {
+        height: 450px;
+        padding-inline: 20px;
+        h2 {
+            font-size: x-large;
+        }
+        p {
+            font-size: medium;
+            width: 80%;
+        }
+    }
+}

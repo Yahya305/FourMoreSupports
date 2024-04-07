@@ -1,0 +1,43 @@
+.ourservices-container{
+    padding: 40px 25px;
+    height: 80vh;
+    position: relative;
+    z-index: 0;
+    background-color: $primary;
+    .heading-text{
+        width: 85%;
+        margin: 40px 25px;
+    }
+    @include  typo($font_inter, 400, 18px, black);
+    .background-lines{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        height: 200px;
+        width: 100%;
+        background-color: greenyellow;
+        z-index: -1;
+
+    }
+    .cards{
+        display: grid;
+        height: fit-content;
+        grid-template-columns: repeat(3,1fr);
+        gap: 80px;
+        max-width: 1460px;
+        margin: 0 auto;
+        @include responsive(lg){
+            gap: 40px;
+        }
+        @include responsive(md){
+            gap: 30px;
+        }
+        @include responsive(sm){
+            grid-template-columns: repeat(1,1fr);
+        }
+    }
+    @include responsive(xl){
+        height: fit-content;
+    }
+}

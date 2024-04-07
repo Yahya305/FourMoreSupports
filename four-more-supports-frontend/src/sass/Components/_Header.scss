@@ -1,8 +1,40 @@
 header {
-    padding: 24px 20px;
     background: #f1f1f1;
-    .header-wrapper {
+    .nav-sec-1{
+        background-color: $primary;
+        height: 42px;
+        padding: 5px 50px;
+        display: flex;
+        align-items: center;
+        @include typo($font_inter, 400, medium, black);
+        .nav-menus{
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            .nav-item{
+                cursor: pointer;
+                font-weight: 600;
+            }
+        }
+        .drop-icn{
+            display: none;
+        }
+        @include responsive(md) {
+            padding: 5px 25px;
+            .nav-menus{
+                display: none;
+            }
+            .drop-icn{
+                display: block;
+                margin-left: auto;
+                cursor: pointer;
+            }
+        }
+    }
+    .nav-sec-3 {
         max-width: $width;
+        padding: 24px 20px;
         margin: 0 auto;
         display: flex;
         gap: 100px;
