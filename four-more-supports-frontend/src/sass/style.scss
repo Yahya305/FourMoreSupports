@@ -1,4 +1,10 @@
 @import "./vars";
+@import "./mixins";
 
+// Components
 @import "./Components/Footer";
 @import "./Components/Header";
+@import "./Components/PrimaryButton";
+
+// Modals
+@import "./Modals/index";

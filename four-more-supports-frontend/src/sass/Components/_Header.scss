@@ -1,18 +1,43 @@
-.header-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-inline: 20px;
-    background-color: $secondary;
-    .header-wrapper{
+header {
+    padding: 24px 20px;
+    background: #f1f1f1;
+    .header-wrapper {
+        max-height: $width;
+        margin: 0 auto;
         display: flex;
-        justify-content: space-between;
-        width: 100%;
-        .header-sec1{
-            display: flex;
+        gap: 100px;
+        align-items: center;
+        @include responsive(md) {
+            justify-content: space-between;
+            gap: 0;
         }
-        .header-sec2{
-            display: flex;
+        .logo {
+            svg {
+                width: 127px;
+                height: 68px;
+            }
+        }
+        nav {
+            @include responsive(md) {
+                display: none;
+            }
+            ul {
+                display: flex;
+                gap: 30px;
+                li {
+                    list-style: none;
+                    a {
+                        text-decoration: none;
+                        @include typo($font_inter, 400, 18px, $secondary);
+                    }
+                }
+            }
+        }
+        button.ham {
+            display: none;
+            @include responsive(md) {
+                display: block;
+            }
         }
     }
 }

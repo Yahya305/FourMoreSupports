@@ -1,0 +1,189 @@
+.footer {
+    background-color: $secondary;
+    padding: 65px 20px;
+    &-wrapper {
+        max-width: $width;
+        margin: 0 auto;
+
+        .foot-main {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            gap: 40px;
+            @include responsive(lg) {
+                grid-template-columns: 1fr 1fr;
+            }
+            @include responsive(sm) {
+                display: flex;
+                flex-direction: column;
+            }
+            .left {
+                svg {
+                    padding-bottom: 10px;
+                    width: 127px;
+                    height: 68px;
+                }
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                .desc {
+                    @include typo(
+                        $font_inter,
+                        400,
+                        18px,
+                        rgba(255, 255, 25, 0.5)
+                    );
+                    @include responsive-text-18();
+                }
+                .icons {
+                    display: flex;
+                    gap: 12px;
+                    svg {
+                        width: auto;
+                    }
+                }
+            }
+            .right {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .title {
+                    @include typo($font_inter, 700, 35px, $primary);
+                    text-transform: capitalize;
+                }
+
+                input {
+                    border-radius: 5px;
+                    background: rgba(255, 255, 255, 0.05);
+                    padding: 20px;
+                    border: none;
+                    outline: none;
+                    @include typo(
+                        $font_inter,
+                        400,
+                        18px,
+                        rgba(255, 255, 255, 0.35)
+                    );
+                }
+            }
+        }
+        .mid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            @media (max-width: 1400px) {
+                grid-template-columns: 1fr 1fr;
+            }
+            @include responsive(lg) {
+                display: none;
+            }
+            &.hidden {
+                display: none;
+                @include responsive(lg) {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    margin-top: 70px;
+                }
+                @include responsive(sm) {
+                    grid-template-columns: 1fr 1fr;
+                }
+                @include responsive(xs) {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+            gap: 40px;
+            nav {
+                .title {
+                    @include typo($font_inter, 500, 25px, white);
+                    padding-bottom: 20px;
+                }
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    li {
+                        list-style: none;
+                        a {
+                            text-decoration: none;
+                            @include typo(
+                                $font_inter,
+                                400,
+                                18px,
+                                rgba(255, 255, 255, 0.5)
+                            );
+                            @include responsive-text-18();
+                        }
+                    }
+                }
+            }
+            .contacts {
+                .title {
+                    color: white;
+                    font-family: $font_inter;
+                    padding-bottom: 20px;
+                }
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    li {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        list-style: none;
+                        h4 {
+                            @include typo($font_inter, 400, 18px, white);
+                        }
+                        span {
+                            @include typo(
+                                $font_inter,
+                                400,
+                                18px,
+                                rgba(255, 255, 255, 0.5)
+                            );
+                            &.emails {
+                                p {
+                                    @include typo(
+                                        $font_inter,
+                                        400,
+                                        18px,
+                                        $primary
+                                    );
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .foot-foot {
+            padding-top: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include responsive(lg) {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            .code {
+                @include typo($font_inter, 500, 16px, rgba(255, 255, 255, 0.8));
+            }
+            .desc {
+                max-width: 820px;
+                padding: 25px;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+
+                @include typo($font_inter, 400, 28px, white);
+                @include responsive-text-28();
+            }
+        }
+    }
+}
+.copy-right {
+    padding: 22px 0;
+    text-align: center;
+    background-color: $primary;
+    @include typo($font_inter, 400, 18px, rgba(0, 33, 53, 0.5));
+}
