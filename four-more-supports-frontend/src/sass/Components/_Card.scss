@@ -1,4 +1,4 @@
-.card{
+.card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,51 +7,63 @@
     border-radius: 10px;
     h2,
     p {
-      flex: 1; /* Make elements grow to fill available space */
+        flex: 1; /* Make elements grow to fill available space */
     }
-    h2{
+    h2 {
         text-align: center;
     }
-    p{
+    p {
         text-align: center;
         font-size: medium;
     }
-    &.blue{
+    &.blue {
         background-color: $secondary;
         color: white;
     }
-    &.white{
+    &.white {
         background-color: white;
         color: black;
     }
-    @include responsive(lg){
-        h2{
+    @include responsive(lg) {
+        h2 {
             font-size: x-large;
         }
     }
-    @include responsive(md){
+    @include responsive(md) {
         padding: 45px 25px;
-        h2{
+        h2 {
             font-size: large;
         }
-        p{
+        p {
             font-size: small;
         }
-        button{
+        button {
             font-size: small;
         }
     }
-    @include responsive(sm){
+    @include responsive(sm) {
         height: 550px;
-        h2{
+        margin-inline: 25px;
+        h2 {
             font-size: xx-large;
         }
-        p{
+        p {
             font-size: 22px;
             width: 65%;
         }
-        button{
+        button {
             font-size: inherit;
+        }
+    }
+    @include responsive(xs) {
+        height: 450px;
+        padding-inline: 20px;
+        h2 {
+            font-size: x-large;
+        }
+        p {
+            font-size: medium;
+            width: 80%;
         }
     }
 }
