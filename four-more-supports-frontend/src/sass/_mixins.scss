@@ -17,6 +17,15 @@
     color: $color;
 }
 
+@mixin responsive-text-55() {
+    @include responsive(md) {
+        font-size: 45px;
+    }
+    @include responsive(sm) {
+        font-size: 35px;
+    }
+}
+
 @mixin responsive-text-18() {
     @include responsive(md) {
         font-size: 16px;

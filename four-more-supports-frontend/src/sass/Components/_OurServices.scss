@@ -13,9 +13,12 @@
         .heading-text {
             h1 {
                 @include typo($font_inter, 600, 55px, $secondary);
+                @include responsive-text-55()
             }
             span {
                 @include typo($font_inter, 400, 35px, rgba(0, 0, 0, 0.5));
+                @include responsive-text-28()
+                
             }
         }
         .cards {

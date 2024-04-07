@@ -182,7 +182,7 @@
     }
 }
 .copy-right {
-    padding: 22px 0;
+    padding: 22px 20px;
     text-align: center;
     background-color: $primary;
     @include typo($font_inter, 400, 18px, rgba(0, 33, 53, 0.5));
