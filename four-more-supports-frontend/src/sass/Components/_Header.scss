@@ -1,35 +1,66 @@
 header {
     background: #f1f1f1;
-    .nav-sec-1{
+    .nav-sec-1 {
         background-color: $primary;
-        height: 42px;
-        padding: 5px 50px;
+        padding: 10px 20px;
         display: flex;
         align-items: center;
         @include typo($font_inter, 400, medium, black);
-        .nav-menus{
+        .nav-menus {
             margin-left: auto;
             display: flex;
             align-items: center;
             gap: 25px;
-            .nav-item{
+            .nav-item {
                 cursor: pointer;
                 font-weight: 600;
             }
-        }
-        .drop-icn{
-            display: none;
-        }
-        @include responsive(md) {
-            padding: 5px 20px;
-            .nav-menus{
+            @include responsive(md) {
                 display: none;
             }
-            .drop-icn{
-                display: block;
-                margin-left: auto;
-                cursor: pointer;
+        }
+        .head,
+        .body {
+            display: none;
+        }
+        .head {
+            .drop-icn {
+                svg {
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                    &.active {
+                        transform: rotate(180deg);
+                    }
+                }
             }
+            @include responsive(md) {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+        }
+        .body {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 5px;
+            .mob-nav-menus {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            .nav-item {
+                text-align: center;
+                cursor: pointer;
+                @include typo($font_inter, 400, medium, black);
+            }
+        }
+        @include responsive(md) {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 50px;
         }
     }
     .nav-sec-3 {
