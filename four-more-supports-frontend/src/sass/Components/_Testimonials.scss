@@ -1,20 +1,32 @@
 .Testimonials {
     padding: 150px 0;
     &-wrapper {
-        max-width: $width;
+        max-width: calc($width + 40px);
         margin: 0 auto;
-        padding: 0 20px;
         .head {
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            padding: 0 20px;
             padding-bottom: 90px;
             h2 {
                 @include typo($font_inter, 500, 55px, #263238);
+                @include responsive(md) {
+                    font-size: 30px;
+                }
+                @include responsive(sm) {
+                    font-size: 20px;
+                }
             }
             h3 {
                 @include typo($font_inter, 500, 35px, #263238);
+                @include responsive(md) {
+                    font-size: 20px;
+                }
+                @include responsive(sm) {
+                    font-size: 18px;
+                }
             }
         }
         .testimonial-slider-wrapper {
@@ -34,6 +46,9 @@
                     padding: 45px;
                     border: 2px solid $primary;
                     background-color: white;
+                    @include responsive(md) {
+                        padding: 20px;
+                    }
                     .desc {
                         @include typo($font_inter, 300, 20px, black);
                     }

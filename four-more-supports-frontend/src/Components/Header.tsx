@@ -6,8 +6,6 @@ import { useAppDispatch, useAppSelector } from "@/Redux/Hooks";
 import { ModalVarsActions } from "@/Redux/slices/ModalVars";
 import HeaderMenuItem from "@/SpecificComponenets/HeaderMenuItem";
 import { RxHamburgerMenu } from "react-icons/rx";
-import NavSection1 from "./NavSection1";
-import NavSection2 from "./NavSection2";
 
 const Header = () => {
     const dispatch = useAppDispatch();
@@ -17,33 +15,28 @@ const Header = () => {
     return (
         <header>
             <div className="header-wrapper">
-                <NavSection1 />
-                <NavSection2 />
-                {/* <div className="nav-sec-2">sdsa</div> */}
-                <div className="nav-sec-3">
-                    <div className="logo">
-                        <Logo type="DARK" />
-                    </div>
-                    <nav>
-                        <ul>
-                            {HeaderMenu.map((Item) => (
-                                <HeaderMenuItem Item={Item} key={Item.id} />
-                            ))}
-                        </ul>
-                    </nav>
-                    <button
-                        onClick={() =>
-                            dispatch(
-                                ModalVarsActions.setMobileHeaderModalStatus(
-                                    !mobileHeader
-                                )
-                            )
-                        }
-                        className="ham"
-                    >
-                        <RxHamburgerMenu />
-                    </button>
+                <div className="logo">
+                    <Logo type="DARK" />
                 </div>
+                <nav>
+                    <ul>
+                        {HeaderMenu.map((Item) => (
+                            <HeaderMenuItem Item={Item} key={Item.id} />
+                        ))}
+                    </ul>
+                </nav>
+                <button
+                    onClick={() =>
+                        dispatch(
+                            ModalVarsActions.setMobileHeaderModalStatus(
+                                !mobileHeader
+                            )
+                        )
+                    }
+                    className="ham"
+                >
+                    <RxHamburgerMenu />
+                </button>
             </div>
         </header>
     );

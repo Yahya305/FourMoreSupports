@@ -1,8 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 type initialStateType = {
-    mobileHeader: boolean;
-    navHeader: boolean;
+    
 };
 
 const initialState: initialStateType = {

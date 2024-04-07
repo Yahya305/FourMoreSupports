@@ -4,7 +4,10 @@ interface PrimaryButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children?: ReactNode;
 }
 
-const SecondaryButton: React.FC<PrimaryButtonProps> = ({ children, ...rest }) => {
+const SecondaryButton: React.FC<PrimaryButtonProps> = ({
+    children,
+    ...rest
+}) => {
     return (
         <button className="__Secondary_BUTTON__" {...rest}>
             {children}

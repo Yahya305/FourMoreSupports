@@ -1,43 +1,53 @@
 .cta-sec {
-    width: 80%;
-    margin: 100px auto;
-    display: flex;
-    gap: 100px;
-    align-items: center;
-    @include responsive(sm) {
-        flex-direction: column;
-        gap: 50px;
-    }
-    @include typo($font_inter, 400, medium, black);
-    .image-sec {
-        height: 325px;
-        width: 45%;
-        background-color: $primary;
-        @include responsive(sm) {
-            width: 80%;
+    padding-top: 150px;
+    padding-inline: 20px;
+    &-wrapper {
+        max-width: $width;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 100px;
+        align-items: center;
+        @include responsive(lg) {
+            gap: 30px;
         }
-        @include responsive(xs){
-            height: 230px;
+        @include responsive(md) {
+            grid-template-columns: 1fr;
         }
-    }
-    .content-sec {
-        width: 55%;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-        h2{
-            @include responsive(xs){
-                font-size: large;
+        .image-sec {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            @include responsive(md) {
+                height: 500px;
+            }
+            img {
+                object-fit: contain;
             }
         }
-        p {
-            @include typo($font_inter, 400, medium, rgba(0, 33, 53, 0.5));
-            @include responsive(xs){
-                font-size: small;
+        .content-sec {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding: 97px 0px;
+            h2 {
+                @include typo($font_inter, 600, 55px, $secondary);
+                @include responsive(lg) {
+                    font-size: 50px;
+                }
+                @include responsive(md) {
+                    font-size: 30px;
+                }
             }
-        }
-        @include responsive(sm) {
-            width: 80%;
+            p {
+                @include typo($font_inter, 400, 35px, rgba(0, 33, 53, 0.5));
+                @include responsive(md) {
+                    font-size: 25px;
+                }
+                @include responsive(sm) {
+                    font-size: 18px;
+                }
+            }
         }
     }
 }

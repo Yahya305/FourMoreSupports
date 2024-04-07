@@ -1,0 +1,37 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "group": {
+                "kind": "build"
+            },
+            "command": "sass .\\src\\sass\\style.scss .\\src\\Assets\\custom.css --style compressed --watch",
+            "label": "Compile Sass with Watcher"
+        },
+        {
+            "type": "shell",
+            "group": {
+                "kind": "build"
+            },
+            "command": "npm run dev",
+            "label": "npm: dev"
+        },
+        {
+            "type": "shell",
+            "group": {
+                "kind": "build"
+            },
+            "command": "vercel --prod",
+            "label": "vercel: Deploy to Prod"
+        },
+        {
+            "type": "shell",
+            "group": {
+                "kind": "build"
+            },
+            "command": "vercel",
+            "label": "vercel: Deploy"
+        }
+    ]
+}

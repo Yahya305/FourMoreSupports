@@ -1,98 +1,9 @@
 header {
     background: #f1f1f1;
-    .nav-sec-1 {
-        background-color: $primary;
-        padding: 10px 20px;
-        display: flex;
-        align-items: center;
-        @include typo($font_inter, 400, medium, black);
-        .nav-menus {
-            margin-left: auto;
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            .nav-item {
-                cursor: pointer;
-                font-weight: 600;
-            }
-            @include responsive(md) {
-                display: none;
-            }
-        }
-        .head,
-        .body {
-            display: none;
-        }
-        .head {
-            .drop-icn {
-                svg {
-                    cursor: pointer;
-                    transition: all 0.3s ease-in-out;
-                    &.active {
-                        transform: rotate(180deg);
-                    }
-                }
-            }
-            @include responsive(md) {
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-            }
-        }
-        .body {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            gap: 5px;
-            .mob-nav-menus {
-                display: flex;
-                flex-direction: column;
-                align-items: stretch;
-                gap: 10px;
-            }
-            .nav-item {
-                text-align: center;
-                cursor: pointer;
-                @include typo($font_inter, 400, medium, black);
-            }
-        }
-        @include responsive(md) {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            gap: 50px;
-        }
-    }
-    .nav-sec-2 {
-        background-color: $secondary;
-        display: flex;
-        align-items: center;
-        padding: 5px 50px;
-        height: 70px;
-        .support-sec {
-            margin-left: auto;
-            color: white;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            @include typo($font_inter, 400, medium, white);
-            @include responsive(sm) {
-                gap: 15px;
-            }
-
-            .phone-btn {
-                display: flex;
-                align-items: center;
-                gap: 5px;
-            }
-            button{
-                font-size: 14px;
-            }
-        }
-    }
-    .nav-sec-3 {
+    padding-inline: 20px;
+    .header-wrapper {
         max-width: $width;
-        padding: 24px 20px;
+        padding: 24px 0px;
         margin: 0 auto;
         display: flex;
         gap: 100px;
@@ -135,4 +46,3 @@ header {
         }
     }
 }
-

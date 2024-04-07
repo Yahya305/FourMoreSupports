@@ -1,0 +1,35 @@
+.top-bar-2 {
+    background-color: $secondary;
+    padding-inline: 20px;
+    &-wrapper {
+        display: flex;
+        align-items: center;
+
+        padding: 5px 0;
+
+        height: 70px;
+
+        max-width: $width;
+        margin: 0 auto;
+        .support-sec {
+            margin-left: auto;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            @include typo($font_inter, 400, medium, white);
+            @include responsive(sm) {
+                gap: 15px;
+            }
+
+            .phone-btn {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+            button {
+                font-size: 14px;
+            }
+        }
+    }
+}

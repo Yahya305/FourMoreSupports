@@ -1,0 +1,69 @@
+.top-bar-1 {
+    padding-inline: 20px;
+    background-color: $primary;
+    &-wrapper {
+        padding: 10px 0;
+        max-width: $width;
+        margin: 0 auto;
+        
+        display: flex;
+        align-items: center;
+        @include typo($font_inter, 400, medium, black);
+        .nav-menus {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            .nav-item {
+                cursor: pointer;
+                font-weight: 600;
+            }
+            @include responsive(md) {
+                display: none;
+            }
+        }
+        .head,
+        .body {
+            display: none;
+        }
+        .head {
+            .drop-icn {
+                svg {
+                    cursor: pointer;
+                    transition: all 0.3s ease-in-out;
+                    &.active {
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+            @include responsive(md) {
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+            }
+        }
+        .body {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 5px;
+            .mob-nav-menus {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            .nav-item {
+                text-align: center;
+                cursor: pointer;
+                @include typo($font_inter, 400, medium, black);
+            }
+        }
+        @include responsive(md) {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 50px;
+        }
+    }
+}

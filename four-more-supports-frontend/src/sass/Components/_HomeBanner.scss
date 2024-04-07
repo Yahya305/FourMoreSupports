@@ -1,28 +1,45 @@
-.banner-container {
-    padding-inline: 25px;
-    height: 95vh;
-    display: flex;
-    @include typo($font_inter, 400, 18px, rgba(0, 33, 53, 0.5));
-    .banner-content {
-        padding-top: 200px;
-        h1 {
-            color: $secondary;
+.banner {
+    padding-inline: 20px;
+    .banner-container {
+        padding: 200px 0;
+        display: flex;
+        max-width: $width;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        @include responsive(md) {
+            grid-template-columns: 1fr;
         }
-        .desc {
-            width: 500px;
-            margin: 10px 0px;
+        @include responsive(lg) {
+            padding: 100px 20px;
+            @include typo($font_inter, 400, 50px, $secondary);
         }
-    }
-    @include responsive(xs) {
         .banner-content {
-            padding-top: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 17px;
             h1 {
                 color: $secondary;
+                @include typo($font_inter, 700, 96px, $secondary);
+                @include responsive(lg) {
+                    font-size: 50px;
+                    font-weight: 500;
+                }
+                @include responsive(md) {
+                    font-size: 30px;
+                }
             }
             .desc {
-                width: 70%;
-                font-size: medium;
-                margin: 10px 0px;
+                @include typo($font_inter, 300, 25px, rgba(0, 33, 53, 0.5));
+                @include responsive(lg) {
+                    font-size: 18px;
+                }
+            }
+            button {
+                padding: 20px 30px;
+                border-radius: 5px;
+                @include typo($font_inter, 600, 18px, white);
             }
         }
     }

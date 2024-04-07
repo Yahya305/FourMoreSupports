@@ -52,8 +52,6 @@ const TestimonialSlider = () => {
                 autoPlay
                 autoPlayInterval={2000}
                 infinite
-                paddingLeft={10}
-                paddingRight={10}
             />
         </div>
     );
