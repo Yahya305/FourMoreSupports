@@ -2,6 +2,7 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     MobileHeaderModalStatus: false,
+    NavHeaderModalStatus:false
 };
 
 const Slice = createSlice({
@@ -10,6 +11,9 @@ const Slice = createSlice({
     reducers: {
         setMobileHeaderModalStatus: (state, action: PayloadAction<boolean>) => {
             state.MobileHeaderModalStatus = action.payload;
+        },
+        setNavHeaderModalStatus: (state, action: PayloadAction<boolean>) => {
+            state.NavHeaderModalStatus = action.payload;
         },
     },
 });

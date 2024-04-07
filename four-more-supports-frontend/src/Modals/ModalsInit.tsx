@@ -6,7 +6,7 @@ import MobileHeaderModal from "./MobileHeaderModal";
 import { useEffect } from "react";
 
 const ModalsInit = () => {
-    const { MobileHeaderModalStatus } = useAppSelector(
+    const { MobileHeaderModalStatus,NavHeaderModalStatus } = useAppSelector(
         (state) => state.ModalVars
     );
 
@@ -43,6 +43,9 @@ const ModalsInit = () => {
         <div className="__Modals_Init__">
             <AnimatePresence>
                 {MobileHeaderModalStatus && <MobileHeaderModal />}
+            </AnimatePresence>
+            <AnimatePresence>
+                {NavHeaderModalStatus && <MobileHeaderModal />}
             </AnimatePresence>
         </div>
     );

@@ -2,10 +2,13 @@ import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 type initialStateType = {
     mobileHeader: boolean;
+    navHeader: boolean;
 };
 
 const initialState: initialStateType = {
     mobileHeader: false,
+    navHeader: false
+
 };
 
 export const Slice = createSlice({
