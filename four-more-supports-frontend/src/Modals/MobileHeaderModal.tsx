@@ -2,16 +2,18 @@
 
 import Logo from "@/Assets/Icons/Logo";
 import { AnimationType } from "@/Lib/Animation";
+import { HeaderMenu } from "@/Lib/Data/HeaderMenu";
 import { useAppDispatch } from "@/Redux/Hooks";
 import { ModalVarsActions } from "@/Redux/slices/ModalVars";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { MdClose } from "react-icons/md";
 
 const MobileHeaderModal = () => {
     const dispatch = useAppDispatch();
     return (
         <motion.div {...MobileModalShowAnimation} className="MobileHeaderModal">
-            <div className="head">
+            <div className="MobileHeaderModal-head">
                 <div className="logo">
                     <Logo type="DARK" />
                 </div>
@@ -24,6 +26,17 @@ const MobileHeaderModal = () => {
                 >
                     <MdClose />
                 </button>
+            </div>
+            <div className="MobileHeaderModal-body">
+                <nav>
+                    <ul>
+                        {HeaderMenu.map((Item) => (
+                            <Link key={Item.name} href={Item.path}>
+                                {Item.name}
+                            </Link>
+                        ))}
+                    </ul>
+                </nav>
             </div>
         </motion.div>
     );
