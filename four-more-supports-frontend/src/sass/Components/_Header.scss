@@ -1,0 +1,18 @@
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 20px;
+    background-color: $secondary;
+    .header-wrapper{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        .header-sec1{
+            display: flex;
+        }
+        .header-sec2{
+            display: flex;
+        }
+    }
+}
