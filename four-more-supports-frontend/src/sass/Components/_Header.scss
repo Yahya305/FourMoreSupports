@@ -1,34 +1,61 @@
 header {
     background: #f1f1f1;
-    .nav-sec-1{
+    .nav-sec-1 {
         background-color: $primary;
         height: 42px;
         padding: 5px 50px;
         display: flex;
         align-items: center;
         @include typo($font_inter, 400, medium, black);
-        .nav-menus{
+        .nav-menus {
             margin-left: auto;
             display: flex;
             align-items: center;
             gap: 25px;
-            .nav-item{
+            .nav-item {
                 cursor: pointer;
                 font-weight: 600;
             }
         }
-        .drop-icn{
+        .drop-icn {
             display: none;
         }
         @include responsive(md) {
             padding: 5px 20px;
-            .nav-menus{
+            .nav-menus {
                 display: none;
             }
-            .drop-icn{
+            .drop-icn {
                 display: block;
                 margin-left: auto;
                 cursor: pointer;
+            }
+        }
+    }
+    .nav-sec-2 {
+        background-color: $secondary;
+        display: flex;
+        align-items: center;
+        padding: 5px 50px;
+        height: 70px;
+        .support-sec {
+            margin-left: auto;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            @include typo($font_inter, 400, medium, white);
+            @include responsive(sm) {
+                gap: 15px;
+            }
+
+            .phone-btn {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+            button{
+                font-size: 14px;
             }
         }
     }
