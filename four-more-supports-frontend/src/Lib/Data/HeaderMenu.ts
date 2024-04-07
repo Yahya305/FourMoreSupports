@@ -10,49 +10,49 @@ type MenuItem = {
 export const HeaderMenu: MenuItem[] = [
     {
         name: "Home",
-        path: "",
+        path: "/",
         id: nanoid(),
     },
     {
         name: "NDIS Services",
-        path: "",
+        path: "/",
         id: nanoid(),
         nestedItems: [
             {
                 name: "NDIS",
-                path: "",
+                path: "/",
                 id: nanoid(),
             },
             {
                 name: "Blog",
-                path: "",
+                path: "/",
                 id: nanoid(),
             },
             {
                 name: "Contact Us",
-                path: "",
+                path: "/",
                 id: nanoid(),
             },
         ],
     },
     {
         name: "About FMS",
-        path: "",
+        path: "/",
         id: nanoid(),
     },
     {
         name: "NDIS",
-        path: "",
+        path: "/",
         id: nanoid(),
     },
     {
         name: "Blog",
-        path: "",
+        path: "/",
         id: nanoid(),
     },
     {
         name: "Contact Us",
-        path: "",
+        path: "/",
         id: nanoid(),
     },
 ];
