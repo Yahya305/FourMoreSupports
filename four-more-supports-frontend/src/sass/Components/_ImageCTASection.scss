@@ -1,0 +1,43 @@
+.cta-sec {
+    width: 80%;
+    margin: 100px auto;
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    @include responsive(sm) {
+        flex-direction: column;
+        gap: 50px;
+    }
+    @include typo($font_inter, 400, medium, black);
+    .image-sec {
+        height: 325px;
+        width: 45%;
+        background-color: $primary;
+        @include responsive(sm) {
+            width: 80%;
+        }
+        @include responsive(xs){
+            height: 230px;
+        }
+    }
+    .content-sec {
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        h2{
+            @include responsive(xs){
+                font-size: large;
+            }
+        }
+        p {
+            @include typo($font_inter, 400, medium, rgba(0, 33, 53, 0.5));
+            @include responsive(xs){
+                font-size: small;
+            }
+        }
+        @include responsive(sm) {
+            width: 80%;
+        }
+    }
+}
