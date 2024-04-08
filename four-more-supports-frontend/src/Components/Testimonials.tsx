@@ -1,9 +1,4 @@
-import dynamic from "next/dynamic";
-
-const NoSSRTestimonialSlider = dynamic(
-    () => import("@/SpecificComponenets/TestimonialSlider"),
-    { ssr: false }
-);
+import TestimonialSlider from "@/SpecificComponenets/TestimonialSlider";
 
 const Testimonials = () => {
     return (
@@ -13,7 +8,7 @@ const Testimonials = () => {
                     <h2 className="title">What Our Client Says</h2>
                     <h3 className="sub-title">The People Have Spoken!</h3>
                 </div>
-                <NoSSRTestimonialSlider />
+                <TestimonialSlider />
             </div>
         </section>
     );

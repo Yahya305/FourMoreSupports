@@ -2,15 +2,19 @@
 
 import Image from "next/image";
 import { PiQuotesFill } from "react-icons/pi";
+import useEmblaCarousel from "embla-carousel-react";
+import { EmblaCarouselType, EmblaEventType } from "embla-carousel";
+import Autoplay from "embla-carousel-autoplay";
+import ClassNames from "embla-carousel-class-names";
+import { useCallback, useEffect, useRef, useState } from "react";
 
-import "react-alice-carousel/lib/scss/alice-carousel.scss";
-import AliceCarousel from "react-alice-carousel";
+const TWEEN_FACTOR_BASE = 0.22;
 
-const SlideItem = () => (
-    <div
-        className="
-     testimonial-slide"
-    >
+const numberWithinRange = (number: number, min: number, max: number): number =>
+    Math.min(Math.max(number, min), max);
+
+const SlideItem = ({ index }: { index: number }) => (
+    <div className="testimonial-slide">
         <div className="testimonial-slide-wrapper">
             <div className="icon">
                 <PiQuotesFill />
@@ -28,31 +32,124 @@ const SlideItem = () => (
                     src="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg"
                     alt="user__image"
                 />
-                <div className="user_name">Jhon Someone</div>
+                <div className="user_name">Jhon Someone {index}</div>
             </div>
         </div>
     </div>
 );
 
-const items = Array.from({ length: 5 }, (_, index) => (
-    <SlideItem key={index} />
-));
 const TestimonialSlider = () => {
+    const tweenFactor = useRef(0);
+    const tweenNodes = useRef<HTMLElement[]>([]);
+    const [emblaRef, emblaApi] = useEmblaCarousel(
+        {
+            loop: true,
+            align: "center",
+        },
+        [
+            Autoplay({
+                delay: 3000,
+            }),
+            ClassNames({
+                inView: "active",
+            }),
+        ]
+    );
+
+    const setTweenNodes = useCallback((emblaApi: EmblaCarouselType): void => {
+        tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
+            return slideNode.querySelector(
+                ".testimonial-slide-wrapper"
+            ) as HTMLElement;
+        });
+    }, []);
+
+    const setTweenFactor = useCallback((emblaApi: EmblaCarouselType) => {
+        tweenFactor.current =
+            TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
+    }, []);
+
+    const tweenScale = useCallback(
+        (emblaApi: EmblaCarouselType, eventName?: EmblaEventType) => {
+            const engine = emblaApi.internalEngine();
+            const scrollProgress = emblaApi.scrollProgress();
+            const slidesInView = emblaApi.slidesInView();
+            const isScrollEvent = eventName === "scroll";
+
+            emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
+                let diffToTarget = scrollSnap - scrollProgress;
+                const slidesInSnap = engine.slideRegistry[snapIndex];
+
+                slidesInSnap.forEach((slideIndex) => {
+                    if (isScrollEvent && !slidesInView.includes(slideIndex))
+                        return;
+
+                    if (engine.options.loop) {
+                        engine.slideLooper.loopPoints.forEach((loopItem) => {
+                            const target = loopItem.target();
+
+                            if (slideIndex === loopItem.index && target !== 0) {
+                                const sign = Math.sign(target);
+
+                                if (sign === -1) {
+                                    diffToTarget =
+                                        scrollSnap - (1 + scrollProgress);
+                                }
+                                if (sign === 1) {
+                                    diffToTarget =
+                                        scrollSnap + (1 - scrollProgress);
+                                }
+                            }
+                        });
+                    }
+
+                    const tweenValue =
+                        1 - Math.abs(diffToTarget * tweenFactor.current);
+                    const scale = numberWithinRange(
+                        tweenValue,
+                        0,
+                        1
+                    ).toString();
+                    const tweenNode = tweenNodes.current[slideIndex];
+                    if (tweenNode?.style) {
+                        tweenNode.style.transform = `scale(${scale})`;
+                    }
+                });
+            });
+        },
+        []
+    );
+
+    useEffect(() => {
+        if (!emblaApi) return;
+
+        setTweenNodes(emblaApi);
+        setTweenFactor(emblaApi);
+        tweenScale(emblaApi);
+
+        emblaApi
+            .on("reInit", setTweenNodes)
+            .on("reInit", setTweenFactor)
+            .on("reInit", tweenScale)
+            .on("scroll", tweenScale);
+        return () => {
+            emblaApi
+                .off("reInit", setTweenNodes)
+                .off("reInit", setTweenFactor)
+                .off("reInit", tweenScale)
+                .off("scroll", tweenScale);
+        };
+    }, [emblaApi, tweenScale]);
+
     return (
-        <div className="testimonial-slider-wrapper">
-            <AliceCarousel
-                items={items}
-                responsive={{
-                    0: { items: 1 },
-                    786: { items: 2 },
-                    1024: { items: 3 },
-                }}
-                disableButtonsControls
-                disableDotsControls
-                autoPlay
-                autoPlayInterval={2000}
-                infinite
-            />
+        <div className="testimonial-slider" ref={emblaRef}>
+            <div className="testimonial-slider-wrapper">
+                <SlideItem index={1} />
+                <SlideItem index={2} />
+                <SlideItem index={3} />
+                <SlideItem index={4} />
+                <SlideItem index={5} />
+            </div>
         </div>
     );
 };
