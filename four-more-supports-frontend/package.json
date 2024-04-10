@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "sass:watch": "sass .\\src\\sass\\style.scss .\\src\\Assets\\Styling\\custom.css --watch --style compressed",
     "lint": "next lint"
   },
   "dependencies": {
@@ -21,9 +22,20 @@
     "react-redux": "^9.1.0"
   },
   "devDependencies": {
+    "@hail2u/css-mqpacker": "github:hail2u/node-css-mqpacker",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.19",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^6.1.2",
+    "postcss": "^8.4.38",
+    "postcss-combine-duplicated-selectors": "^10.0.3",
+    "postcss-csso": "^6.0.1",
+    "postcss-discard-comments": "^6.0.2",
+    "postcss-merge-longhand": "^6.0.5",
+    "postcss-merge-rules": "^6.1.1",
+    "postcss-merge-selectors": "^0.0.6",
     "sass": "^1.74.1",
     "typescript": "^5"
   }

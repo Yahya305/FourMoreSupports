@@ -6,7 +6,7 @@
             "group": {
                 "kind": "build"
             },
-            "command": "npx sass .\\src\\sass\\style.scss .\\src\\Assets\\custom.css --style compressed --watch",
+            "command": "npm run sass:watch",
             "label": "Compile Sass with Watcher"
         },
         {
