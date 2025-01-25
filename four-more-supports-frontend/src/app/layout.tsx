@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "@/Assets/Styling/custom.css";
+import "@/sass/style.scss";
 import StoreProvider from "@/Redux/StoreProvider";
 import ModalsInit from "@/Modals/ModalsInit";
 import GetLayout from "@/Lib/Utils/GetLayout";

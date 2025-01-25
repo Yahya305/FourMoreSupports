@@ -31,7 +31,15 @@ An intuitive and user-friendly application for booking doctors, ensuring seamles
    npm run dev
 
 ## 📸 Screenshots
-Coming soon!
+Coming soon!### Dashboard
+### Dashboard
+<div align="center">
+    <br/><img src="./four-more-supports-frontend/public/dashboard.png" alt="screenshot" /><br/><br/>
+    <p align="justify"> 
+      A tool which parses information from a resume using natural language processing and finds the keywords, cluster them onto sectors based on their keywords. 
+      And lastly show recommendations, predictions, analytics to the applicant / recruiter based on keyword matching.
+    </p>
+</div>
 
 ## 📬 Contact  
 For queries or feedback, reach out to me at [saimyahya47@gmail.com](mailto:saimyahya47@gmail.com).  
